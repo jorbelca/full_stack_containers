@@ -1,0 +1,190 @@
+Script started on Tue Mar 22 12:35:06 2022
+Restored session: lunes, 21 de marzo de 2022, 13:07:21 CET
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hexitdocker run -p 3123:3000 express-server[31Dbuild -t[8P[15C .      [32Dcode .                          [26Ddocker build -t express-server .[25Drun -p 3123:3000 express-server[38Dexit                                  [34D    c ccontainer ls -a[?2004l
+zsh: command not found: container
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hddocker container -ls a[?2004l
+unknown shorthand flag: 'l' in -ls
+See 'docker container --help'.
+
+Usage:  docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Run a command in a new container
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker container COMMAND --help' for more information on a command.
+
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hdocker container -ls a-ls a ls a  ls a[1C[1C- aa  -a[1C[?2004l
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS                      PORTS                     NAMES
+9f8efb39e7cf   mongo            "docker-entrypoint.s…"   About a minute ago   Up About a minute           0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+9027ca5fe9f7   express-server   "docker-entrypoint.s…"   4 hours ago          Exited (1) 4 hours ago                                todo-backend_app_1
+62ce82e4ee53   express-server   "docker-entrypoint.s…"   21 hours ago         Exited (137) 17 hours ago                             sad_carver
+d4aa479a82b0   109f5dc0cb0c     "docker-entrypoint.s…"   21 hours ago         Exited (137) 21 hours ago                             stupefied_brattain
+ce1d4a05d93d   fs-hello-world   "docker-entrypoint.s…"   24 hours ago         Exited (0) 24 hours ago                               romantic_carver
+43981fd0a0a5   node:16          "docker-entrypoint.s…"   25 hours ago         Exited (0) 24 hours ago                               hello-node
+231acf5d25bd   hello-world      "/hello"                 28 hours ago         Exited (0) 28 hours ago                               great_euler
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hddocker exer c [7mtodo-backend_mongo_1[27m[20D[27mt[27mo[27md[27mo[27m-[27mb[27ma[27mc[27mk[27me[27mn[27md[27m_[27mm[27mo[27mn[27mg[27mo[27m_[27m1[?2004l
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hdocker exec todo-backend_mongo_1[1C todo-backend_mongo_1[21D- todo-backend_mongo_1[21Di todo-backend_mongo_1[21Dt todo-backend_mongo_1[21D[?2004l
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004hdocker exec -it todo-backend_mongo_1 bash[?2004l
+]0;root@9f8efb39e7cf: /root@9f8efb39e7cf:/# mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("3f650426-25ff-4e87-a925-880f60b3e4cf") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+> show dbs[3G[Jshow dbs[11G
+> -u root -p example[3G[J-u root -p example[21G
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:3
+> mongo -u root -p example[3G[Jmongo -u root -p example[27G
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:9
+> show[3G[Jshow[7G
+uncaught exception: Error: don't know how to show [] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show db[3G[Jshow db[10G
+uncaught exception: Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db[3G[Jdb[5G
+test
+> use tst[3G[Juse ts[9G[3G[Juse t[8G[3G[Juse [7G[3G[Juse[6G[3G[Jus[5G[3G[Ju[4G[3G[J[3Gshow db[3G[Jshow db[10G
+uncaught exception: Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> dbs[3G[Jdbs[6G
+uncaught exception: ReferenceError: dbs is not defined :
+@(shell):1:1
+> db[3G[Jdb[5G
+test
+> show collections[3G[Jshow collections[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> listDatabasess[3G[JlistDatabases[16G[3G[JlistDatabases[16G
+uncaught exception: ReferenceError: listDatabases is not defined :
+@(shell):1:1
+> use test[3G[Juse test[11G
+switched to db test
+> show collections[3G[Jshow collections[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> [3G[J[3G^C
+bye
+]0;root@9f8efb39e7cf: /root@9f8efb39e7cf:/# mongo -u root -p example
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7ae8828d-fc1e-4147-afee-090d9e80b090") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2022-03-22T11:34:21.967+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> mong[3G[Jmon[6G[3G[Jmo[5G[3G[Jm[4G[3G[J[3Gshow dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the da[3G[Juse the d[12G[3G[Juse the [11G[3G[Juse the[10G[3G[Juse th[9Ge_database[3G[Juse the_database[19G
+switched to db the_database
+> whos [3G[Jwhos[7G[3G[Jwho[6G[3G[Jwh[5G[3G[Jw[4G[3G[J[3Gshow collections[3G[Jshow collections[19G
+todos
+> db.todos.find({[3G[Jdb.todos.find({[18G
+... }_[5G[J}[6G)[5G[J})[7G
+{ "_id" : ObjectId("623979364e7b7846524eb9d1"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("623979364e7b7846524eb9d2"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("623981b127a7f21f2f9d56fb"), "text" : "Test", "done" : false, "__v" : 0 }
+> db.todos.insertON[3G[Jdb.todos.insertO[19Gne({""[3G[Jdb.todos.insertOne({""[24G[3G[Jdb.todos.insertOne({"t"[25G[3G[Jdb.todos.insertOne({"te"[26G[3G[Jdb.todos.insertOne({"tes"[27G[3G[Jdb.todos.insertOne({"test"[28G[3G[Jdb.todos.insertOne({"tes"[27G[3G[Jdb.todos.insertOne({"te"[26G[3G[Jdb.todos.insertOne({"tex"[27G[3G[Jdb.todos.insertOne({"text"[28G[3G[Jdb.todos.insertOne({"text"[29G: "Incres[3G[Jdb.todos.insertOne({"text": "Incre[37Gase the number of tools in my toolbelt", "done[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done"
+[1G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done[83G[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done"
+[1G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":[2G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":f[3G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":[2G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done"
+[1G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done[83G[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done:
+[1G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done[83G[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done"
+[1G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":[2G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":f[3G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":fa[4G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":fal[5G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":fa[4G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":f[3G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":[2G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"[3G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"f[4G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"fa[5G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"fal[6G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"fals[7G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false[8G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false"[9G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false"}[10G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false"})[11G[1A[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false"})[11G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("6239b768ff1d1351f3cfea26")
+}
+> [3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done":"false"})[11G[1A[3G[Jdb.todos.find({ })[21G[3G[Jdb.todos.find({ })[21G
+{ "_id" : ObjectId("623979364e7b7846524eb9d1"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("623979364e7b7846524eb9d2"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("623981b127a7f21f2f9d56fb"), "text" : "Test", "done" : false, "__v" : 0 }
+{ "_id" : ObjectId("6239b768ff1d1351f3cfea26"), "text" : "Increase the number of tools in my toolbelt", "done" : "false" }
+> exit[3G[Jexit[7G
+bye
+]0;root@9f8efb39e7cf: /root@9f8efb39e7cf:/# exit
+exit
+[1m[7m%[27m[1m[0m                                                                                   ]7;file://MacBook-Air-de-K-4.local/Users/k/Documents/FullStackOpen/12/todo-app/todo-backend[0m[27m[24m[Jk@MacBook-Air-de-K-4 todo-backend % [K[?2004heeci e exis t[?2004l
+Saving session...
+...saving history...truncating history files...
+...completed.
+Deleting expired sessions...none found.
+
+Script done on Tue Mar 22 12:48:14 2022
