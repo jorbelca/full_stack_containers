@@ -107,3 +107,15 @@ $10
 statistics
 $18
 {"added_todos":11}
+*2
+$6
+SELECT
+$1
+0
+*3
+$3
+set
+$10
+statistics
+$18
+{"added_todos":12}

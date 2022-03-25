@@ -2,12 +2,10 @@ FROM node:16
 
 WORKDIR /usr/src/app
 
-COPY --chown=node . .
+COPY --chown=node:node . .
 
 RUN npm install
 
 USER node
-
-
-
-CMD ["npm", "start"]
+ 
+CMD npm run dev

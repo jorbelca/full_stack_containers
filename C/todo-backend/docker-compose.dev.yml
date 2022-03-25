@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  express-back:
+  back:
     build:
       context: .
       dockerfile: dev.Dockerfile
@@ -9,10 +9,10 @@ services:
       - ./:/usr/src/app
     environment:
      - REDIS_URL=redis://redis:6379 
-     - MONGO_URL=mongodb://the_username:the_password@mongo:3456/the_database
+     - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
     ports:
       - "3000:3000"
-    container_name: express-back
+    container_name: back
     depends_on:
       - mongo
       - redis
@@ -20,14 +20,15 @@ services:
 
   mongo:
     image: mongo
-    ports:
-      - "3456:27017"
+    # ports:
+    #   - "27000:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: the_database
     volumes:
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
     container_name: mongo
 
   redis:
@@ -38,3 +39,6 @@ services:
     container_name: redis
     volumes:
       - ./redis_data:/data
+
+volumes:
+  mongo_data:
