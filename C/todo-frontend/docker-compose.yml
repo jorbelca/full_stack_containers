@@ -7,7 +7,20 @@ services:
     volumes:
       - ./:/usr/src/app 
     ports:
-      - 3000:3000
+      - 3210:3000
     container_name: hello-front-dev 
-  debug-helper:
-    image: busybox
+    
+  # debug-helper:
+  #   image: busybox
+  #   container_name: busy-box
+
+  # nginx:
+  #   image: nginx:1.20.1
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   ports:
+  #     - 8080:80
+  #   container_name: reverse-proxy
+  #   depends_on:
+  #     - app 
+ 

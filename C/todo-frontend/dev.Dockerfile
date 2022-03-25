@@ -6,9 +6,9 @@ COPY . .
 
 RUN npm install
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run","dev" ]
 
-ENV REACT_APP_BACKEND_URL = 'http://localhost:3005/'
+ENV REACT_APP_BACKEND_URL = 'http://localhost:3000/api'
 
 
 
