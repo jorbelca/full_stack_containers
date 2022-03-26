@@ -71,5 +71,5 @@ services:
       - ./todo-backend/redis_data:/data
     restart: unless-stopped
     
-  debug-helper:
-    image: busybox
+  # debug-helper:
+  #   image: busybox
