@@ -1,0 +1,35 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "fullstack open course of the university of helsinki",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "startTest": "mode=test node index.js",
+    "dev": "nodemon index.js",
+    "test:e2e": "npx cypress run",
+    "test": "jest",
+    "eslint": "eslint './**/*.{js,jsx}'",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "cypress:open": "cypress open"
+  },
+  "author": "Jordi Belda",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-react": "^7.29.4",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cypress": "^7.6.0",
+    "eslint": "^8.8.0",
+    "nodemon": "^2.0.15"
+  }
+}
