@@ -1,0 +1,3 @@
+UP => docker-compose -f docker-compose.dev.yml up
+
+Wait until the console of the backend gives the uri(localhost:3000)
