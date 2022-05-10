@@ -4,11 +4,13 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
+RUN npm ci
 
-CMD [ "npm", "run","start" ]
+ENV REACT_APPEND_URL = 'http://localhost:8080/api'
 
-# ENV REACT_APPEND_URL = 'http://localhost:8080/api'
+CMD [ "npm","run", "start" ]
+
+
 
 
 

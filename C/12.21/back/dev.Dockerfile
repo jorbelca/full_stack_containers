@@ -1,11 +1,11 @@
-FROM node:16
+FROM node:14
 
 WORKDIR /usr/src/app
 
 COPY --chown=node:node . .
 
-RUN npm install
+RUN npm ci
 
 USER node
- 
-CMD npm run dev
+
+CMD npm run start

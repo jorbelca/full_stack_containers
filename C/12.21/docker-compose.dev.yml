@@ -1,54 +1,41 @@
 version: '3.8'
 
 services:
- 
+  nginx:
+    image: nginx:1.20.1
+    restart: unless-stopped
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:80"
+    container_name: reverse-proxy
+    depends_on:
+      - back
+      - front
+
 
   front:
     build:
       context: ./front
       dockerfile: dev.Dockerfile 
-    hostname: front
     volumes:
       - ./front:/usr/src/app 
     ports:
-      - "4000:3000"
+      - "3000:3000"
     container_name: FRONT
     depends_on:
       - back
-    restart: unless-stopped
-    
-  
+
 
   back:
     build:
       context: ./back
       dockerfile: dev.Dockerfile
-    hostname: back
+
     volumes:
       - ./back:/usr/src/app
-    environment:
-      - MONGO_URI = mongodb+srv://jordiJCV:jordiJCV@cluster0.sbsph.mongodb.net/persons?retryWrites=true&w=majority
-
+    
     ports:
-      - "3000:3000"
+      - "3001:3001"
     container_name: BACK
-    # depends_on:
-    #   - mongo
-
-    restart: unless-stopped
-
-  # mongo:
-  #   image: mongo
-  #   # ports:
-  #   #   - "3456:27017"
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: root
-  #     MONGO_INITDB_ROOT_PASSWORD: example
-  #     MONGO_INITDB_DATABASE: the_database
-  #   volumes:
-  #     - ./todo-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
-      
-  #   container_name: MONGO
-  #   restart: unless-stopped
-
- 
+   
